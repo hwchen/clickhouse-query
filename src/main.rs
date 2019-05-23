@@ -58,7 +58,7 @@ fn main() {
                             println!("{}", val);
                         },
                         Ok(SqlType::Float32) => {
-                            let val: f32 = row.get(i)?;
+                            let val: f64 = row.get(i)?;
                             println!("{}", val);
                         },
                         Ok(SqlType::Float64) => {
@@ -108,7 +108,7 @@ fn main() {
                                     println!("{}", val);
                                 },
                                 SqlType::Float32 => {
-                                    let val: f32 = row.get(i)?;
+                                    let val: f64 = row.get(i)?;
                                     println!("{}", val);
                                 },
                                 SqlType::Float64 => {
