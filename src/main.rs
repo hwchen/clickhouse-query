@@ -53,7 +53,7 @@ fn main() {
                             let val: &str = row.get(i)?;
                             println!("{}", val);
                         },
-                        Ok(SqlType::FixedString(usize)) => {
+                        Ok(SqlType::FixedString(_)) => {
                             let val: &str = row.get(i)?;
                             println!("{}", val);
                         },
@@ -64,6 +64,59 @@ fn main() {
                         Ok(SqlType::Float64) => {
                             let val: f64 = row.get(i)?;
                             println!("{}", val);
+                        },
+                        Ok(SqlType::Nullable(t)) => {
+                            match t {
+                                SqlType::UInt8 => {
+                                    let val: u8 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::UInt16 => {
+                                    let val: u16 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::UInt32 => {
+                                    let val: u32 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::UInt64 => {
+                                    let val: u64 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::Int8 => {
+                                    let val: i8 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::Int16 => {
+                                    let val: i16 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::Int32 => {
+                                    let val: i32 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::Int64 => {
+                                    let val: i64 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::String => {
+                                    let val: &str = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::FixedString(_) => {
+                                    let val: &str = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::Float32 => {
+                                    let val: f32 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                SqlType::Float64 => {
+                                    let val: f64 = row.get(i)?;
+                                    println!("{}", val);
+                                },
+                                _ => panic!(),
+                            }
                         },
                         _ => panic!(),
                     };
