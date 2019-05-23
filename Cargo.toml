@@ -1,0 +1,10 @@
+[package]
+authors = ["Walther Chen <walther.chen@gmail.com>"]
+edition = "2018"
+name = "clickhouse-test"
+version = "0.1.0"
+
+[dependencies]
+clickhouse-rs = "0.1.12"
+tokio = "0.1.13"
+structopt = "0.2.15"
